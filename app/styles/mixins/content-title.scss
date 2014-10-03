@@ -1,0 +1,26 @@
+@mixin content-title($leftColour, $middleColour, $rightColour) {
+  border-bottom: 5px solid $middleColour;
+  font-family: Century Gothic, sans-serif;
+  color: #727578;
+  display: inline-block;
+  position: relative;
+
+  &:before{
+    content: "";
+    position: absolute;
+    top: 33px;
+    width: 34%;
+    height: 5px;
+    background: $leftColour;
+  }
+
+  &:after{
+    content: "";
+    position: absolute;
+    top: 33px;
+    right: 0;
+    width: 34%;
+    height: 5px;
+    background: $rightColour;
+  }
+}

@@ -1,0 +1,20 @@
+@import './mixins/content-title';
+
+.stock-image{
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+}
+
+.text-area {
+  display: block;
+  width: 74%;
+  text-align: justify;
+  line-height: 2em;
+  margin: 0 auto;
+  padding-left: 2.7em;
+
+  .content-title{
+    @include content-title(#6495ed,#ed8db6,#3ced6e)
+  }
+}

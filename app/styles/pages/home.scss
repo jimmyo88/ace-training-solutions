@@ -1,0 +1,45 @@
+@import './common';
+@import './image-carousel';
+@import './mixins/information-square';
+
+.information-container {
+  background-color: #D0F5FC;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 15px;
+
+  .information-container__information-square {
+
+    width: 304px;
+    border-radius: 18px;
+    display: inline-block;
+    margin: 0 25px 0 25px;
+
+    &:nth-child(1) {
+      @include information-square(#6495ed);
+    }
+
+    &:nth-child(2) {
+      @include information-square(#ed8db6);
+    }
+
+    &:nth-child(3) {
+      @include information-square(#3ced6e);
+    }
+
+
+    .information-square__summary {
+      background-color: #ffffff;
+      display: block;
+    }
+
+    .information-square__title {
+      font-family: Century Gothic, sans-serif;
+      color: #ffffff;
+      font-size: 28px;
+      text-align: center;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}

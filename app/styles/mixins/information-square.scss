@@ -1,0 +1,6 @@
+@mixin information-square($colour) {
+  background-color: $colour;
+  border-bottom: $colour solid 15px;
+  border-right: $colour solid 2px;
+  border-left: $colour solid 2px;
+}

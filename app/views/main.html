@@ -1,0 +1,26 @@
+    <div class="carousel-container">
+        <carousel interval="myInterval" no-pause="true" disable-animation="true">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}" class="stock-image">
+            </slide>
+        </carousel>
+    </div>
+
+    <ul class="information-container">
+        <li class="information-container__information-square" ng-repeat="info in information">
+            <div class="information-square__title">{{info.title}}</div>
+            <img src="{{info.image}}">
+            <span class="information-square__summary">{{info.summary}}</span>
+        </li>
+    </ul>
+
+    <div class="text-area">
+        <h2 class="content-title">Welcome to Ace Training Solutions</h2>
+        <p>Delivering an excellent Customer Service and Customer Experience is the focus of any successful business and is paramount in today's competitive market.&nbsp;</p>
+        <p>Your Customers Journey must be seamless in order for the Customer&nbsp;to want to come back to you time and time again.&nbsp;</p>
+        <p>Turning satisfied Customers into loyal Customers&nbsp;needs to be the main goal of everyone within your business.&nbsp; If you want to stand out from the crowd and offer excellence in customer service delivery&nbsp;then you need to ensure the service you offer is better than your competitors.&nbsp;&nbsp;</p>
+        <p>By investing in your team you will invest in your business and with CTS working with you, your company will gain a competitive edge.</p>
+        <p>First Impressions are imperative to any customer service orientated business.&nbsp; "You never get a second chance with a First Impression; make sure you get it right the first time..."</p>
+        <p>CTS specialises in designing and delivering bespoke training. Each course is individually tailored to suit the needs of your business and your customers.&nbsp; The training is aimed at every member of your team who comes into contact with your customers.</p>
+        <p>By equipping your teams with the necessary and crucial customer service skills they will be inspired and motivated to deliver world class service to each and every one of your customers.</p>
+    </div>
