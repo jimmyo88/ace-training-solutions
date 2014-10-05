@@ -16,7 +16,7 @@ angular.module('aceTrainingApp', [
   ]).config(function ($routeProvider) {
 
     $routeProvider.when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/home.html',
         controller: 'HomeController'
     })
         .when('/about', {
@@ -37,20 +37,20 @@ angular.module('aceTrainingApp', [
                 }
             }
         })
-        .when('/admin', {
-            templateUrl: 'views/auth.html',
-            controller: 'LoginController',
-            resolve: {
-                auth: function ($q, authenticationSvc) {
-                    var userInfo = authenticationSvc.getUserInfo();
-                    if (userInfo) {
-                        return $q.when(userInfo);
-                    } else {
-                        return $q.reject({ authenticated: false });
-                    }
-                }
-            }
-        })
+//        .when('/admin', {
+//            templateUrl: 'views/admin.html',
+//            controller: 'AdminController',
+//            resolve: {
+//                auth: function ($q, authenticationSvc) {
+//                    var userInfo = authenticationSvc.getUserInfo();
+//                    if (userInfo) {
+//                        return $q.when(userInfo);
+//                    } else {
+//                        return $q.reject({ authenticated: false });
+//                    }
+//                }
+//            }
+//        })
         .when('/login', {
             templateUrl: 'views/auth.html',
             controller: 'LoginController'
@@ -60,16 +60,6 @@ angular.module('aceTrainingApp', [
         });
 });
 
-angular.module('aceTrainingApp').directive('disableAnimation', function($animate){
-    return {
-        restrict: 'A',
-        link: function($scope, $element, $attrs){
-            $attrs.$observe('disableAnimation', function(value){
-                $animate.enabled(!value, $element);
-            });
-        }
-    };
-});
 
 angular.module('aceTrainingApp').run(['$rootScope', '$location', function($rootScope, $location) {
 
@@ -80,7 +70,6 @@ angular.module('aceTrainingApp').run(['$rootScope', '$location', function($rootS
 
     $rootScope.$on('$routeChangeError', function(event, current, previous, eventObj) {
         if (eventObj.authenticated === false) {
-            $location.previousUrl = $location.hash;
             $location.path('/login');
 
         }
