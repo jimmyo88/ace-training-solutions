@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name aceTrainingApp.controller:AboutCtrl
- * @description
- * # AboutCtrl
- * Controller of the aceTrainingApp
- */
 angular.module('aceTrainingApp').controller('LoginController', ['$scope', '$location', '$window', 'AuthenticationService',function ($scope, $location, $window, authenticationSvc) {
 
         $scope.userInfo = null;

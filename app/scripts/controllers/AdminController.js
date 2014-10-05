@@ -5,5 +5,4 @@ angular.module('aceTrainingApp')
 
         $scope.messages = $firebaseSvc.getPosts();
 
-
   }]);

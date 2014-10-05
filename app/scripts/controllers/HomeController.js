@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name aceTrainingApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the aceTrainingApp
- */
 angular.module('aceTrainingApp').controller('HomeController', function ($scope) {
     $scope.myInterval = 7000;
     $scope.slides = [

@@ -25,7 +25,11 @@ angular.module('aceTrainingApp', [
         })
         .when('/blog', {
             templateUrl: 'views/blog.html',
-            controller: 'BlogController',
+            controller: 'BlogController'
+        })
+        .when('/admin', {
+            templateUrl: 'views/admin.html',
+            controller: 'AdminController',
             resolve: {
                 auth: function ($q, AuthenticationService) {
                     var userInfo = AuthenticationService.getUserInfo();
@@ -37,20 +41,6 @@ angular.module('aceTrainingApp', [
                 }
             }
         })
-//        .when('/admin', {
-//            templateUrl: 'views/admin.html',
-//            controller: 'AdminController',
-//            resolve: {
-//                auth: function ($q, authenticationSvc) {
-//                    var userInfo = authenticationSvc.getUserInfo();
-//                    if (userInfo) {
-//                        return $q.when(userInfo);
-//                    } else {
-//                        return $q.reject({ authenticated: false });
-//                    }
-//                }
-//            }
-//        })
         .when('/login', {
             templateUrl: 'views/login.html',
             controller: 'LoginController'
