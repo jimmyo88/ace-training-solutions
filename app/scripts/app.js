@@ -52,7 +52,7 @@ angular.module('aceTrainingApp', [
 //            }
 //        })
         .when('/login', {
-            templateUrl: 'views/auth.html',
+            templateUrl: 'views/login.html',
             controller: 'LoginController'
         })
         .otherwise({

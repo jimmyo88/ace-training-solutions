@@ -39,7 +39,7 @@ angular.module('aceTrainingApp').factory('authenticationSvc', function($http, $q
             userInfo = JSON.parse($window.sessionStorage.userInfo);
         }
     }
-    init();
+//    init();
 
     return {
         login: login,
