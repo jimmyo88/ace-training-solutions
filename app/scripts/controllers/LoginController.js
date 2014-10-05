@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the aceTrainingApp
  */
-angular.module('aceTrainingApp').controller('LoginController', ['$scope', '$location', '$window', 'authenticationSvc',function ($scope, $location, $window, authenticationSvc) {
+angular.module('aceTrainingApp').controller('LoginController', ['$scope', '$location', '$window', 'AuthenticationService',function ($scope, $location, $window, authenticationSvc) {
 
         $scope.userInfo = null;
         $scope.login = function () {

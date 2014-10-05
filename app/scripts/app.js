@@ -27,8 +27,8 @@ angular.module('aceTrainingApp', [
             templateUrl: 'views/blog.html',
             controller: 'BlogController',
             resolve: {
-                auth: function ($q, authenticationSvc) {
-                    var userInfo = authenticationSvc.getUserInfo();
+                auth: function ($q, AuthenticationService) {
+                    var userInfo = AuthenticationService.getUserInfo();
                     if (userInfo) {
                         return $q.when(userInfo);
                     } else {
