@@ -25,7 +25,17 @@ angular.module('aceTrainingApp', [
         })
         .when('/blog', {
             templateUrl: 'views/blog.html',
-            controller: 'BlogController'
+            controller: 'BlogController',
+            resolve: {
+                auth: function ($q, authenticationSvc) {
+                    var userInfo = authenticationSvc.getUserInfo();
+                    if (userInfo) {
+                        return $q.when(userInfo);
+                    } else {
+                        return $q.reject({ authenticated: false });
+                    }
+                }
+            }
         })
         .when('/admin', {
             templateUrl: 'views/auth.html',
@@ -47,7 +57,7 @@ angular.module('aceTrainingApp', [
         })
         .otherwise({
             redirectTo: '/'
-        })
+        });
 });
 
 angular.module('aceTrainingApp').directive('disableAnimation', function($animate){
@@ -61,17 +71,17 @@ angular.module('aceTrainingApp').directive('disableAnimation', function($animate
     };
 });
 
-angular.module('aceTrainingApp').run(["$rootScope", "$location", function($rootScope, $location) {
+angular.module('aceTrainingApp').run(['$rootScope', '$location', function($rootScope, $location) {
 
 
-    $rootScope.$on("$routeChangeSuccess", function(userInfo) {
+    $rootScope.$on('$routeChangeSuccess', function(userInfo) {
         console.log(userInfo);
     });
 
-    $rootScope.$on("$routeChangeError", function(event, current, previous, eventObj) {
+    $rootScope.$on('$routeChangeError', function(event, current, previous, eventObj) {
         if (eventObj.authenticated === false) {
             $location.previousUrl = $location.hash;
-            $location.path("/login");
+            $location.path('/login');
 
         }
     });

@@ -7,21 +7,21 @@
  * # AboutCtrl
  * Controller of the aceTrainingApp
  */
-angular.module('aceTrainingApp').factory("authenticationSvc", function($http, $q, $window) {
+angular.module('aceTrainingApp').factory('authenticationSvc', function($http, $q, $window) {
     var userInfo;
 
     function login(userName, password) {
         var deferred = $q.defer();
 
-        $http.post("http://localhost:8080/login", {
+        $http.post('http://localhost:8080/login', {
             username: userName,
             password: password
         }).then(function(result) {
             userInfo = {
-                accessToken: result.data.access_token,
-                userName: result.data.userName
+                accessToken: result.data.accessToken,
+                userName: result.data.username
             };
-            $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
+            $window.sessionStorage.userInfo = JSON.stringify(userInfo);
             deferred.resolve(userInfo);
         }, function(error) {
             deferred.reject(error);
@@ -35,8 +35,8 @@ angular.module('aceTrainingApp').factory("authenticationSvc", function($http, $q
     }
 
     function init() {
-        if ($window.sessionStorage["userInfo"]) {
-            userInfo = JSON.parse($window.sessionStorage["userInfo"]);
+        if ($window.sessionStorage.userInfo) {
+            userInfo = JSON.parse($window.sessionStorage.userInfo);
         }
     }
     init();

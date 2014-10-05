@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the aceTrainingApp
  */
-angular.module('aceTrainingApp').controller("LoginController", ["$scope", "$location", "$window", "authenticationSvc",function ($scope, $location, $window, authenticationSvc) {
+angular.module('aceTrainingApp').controller('LoginController', ['$scope', '$location', '$window', 'authenticationSvc',function ($scope, $location, $window, authenticationSvc) {
 
         $scope.userInfo = null;
         $scope.login = function () {
@@ -16,7 +16,7 @@ angular.module('aceTrainingApp').controller("LoginController", ["$scope", "$loca
                     $scope.userInfo = result;
                     history.back();
                 }, function (error) {
-                    $window.alert("Invalid credentials");
+                    $window.alert('Invalid credentials');
                     console.log(error);
                 });
         };
