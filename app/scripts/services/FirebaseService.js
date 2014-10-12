@@ -1,18 +1,43 @@
 'use strict';
 
-angular.module('aceTrainingApp').service('FirebaseService', [ '$firebase', function($firebase){
-    var service = {};
+angular.module('aceTrainingApp').factory('FirebaseService', [ '$firebase', function($firebase){
 
     var ref = new Firebase('https://acetrainingsolutions.firebaseio.com/');
-    // create an AngularFire reference to the data
-    var sync = $firebase(ref);
 
+    var posts = $firebase(ref);
 
-    service.getPosts = function(){
-        return sync.$asArray();
+    var getRecord = function(index){
+        return ref.$asArray();
     };
 
-    return service;
+    var getPosts = function(){
+        return posts.$asArray();
+    };
+
+    var removePost = function(id){
+        posts.$asArray().$remove(id);
+    };
+
+    var updatePost = function(id){
+        posts.$asArray().$save(id);
+    };
+
+    var updateAllPosts = function(postsArray){
+        ref.set(postsArray);
+    };
+
+    var addPost = function(index){
+        posts.$asArray().$add(index);
+    };
+
+    return {
+        getRecord: getRecord,
+        getPosts: getPosts,
+        removePost: removePost,
+        updatePost: updatePost,
+        addPost: addPost,
+        updateAllPosts: updateAllPosts
+    };
 }]);
 
 

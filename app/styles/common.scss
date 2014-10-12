@@ -17,4 +17,8 @@
   .content-title{
     @include content-title(#6495ed,#ed8db6,#3ced6e)
   }
+
+  .space{
+    padding: 0 10px 0 10px;
+  }
 }
