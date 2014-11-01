@@ -2,6 +2,17 @@
     <h2 class="content-title">Blog</h2>
 
     <ul>
-        <li ng-repeat="message in messages">{{message.name}}: {{message.body}}</li>
+        <li ng-repeat="post in posts">
+            <div ng-class="{'triangle-border-top': $index % 2 == 0, 'triangle-border-bottom': $index % 2 != 0}">
+            <h2>{{post.name}}</h2>
+            <h4>{{post.date}}</h4>
+            <h5>{{post.message}}</h5>
+            </div>
+        </li>
     </ul>
+
+    <button ng-click="(getPreviousFivePosts())" ng-show="currentPage != 0">Previous</button>
+    <button ng-click="(getNextFivePosts())" ng-show="posts.length == 5">Next</button>
+    <!--TODO this wont work if the number of items in firebase is divisible by 5 % 2 = 0-->
+
 </div>

@@ -6,7 +6,7 @@ angular.module('aceTrainingApp')
 
         $scope.posts = FirebaseService.getPosts();
         $scope.localPosts = [];
-        $scope.newPost = {name: '', body: ''};
+        $scope.newPost = {name: '', message: '', date: getDate()};
         var size = 0;
 
         $scope.removePost = function (id) {
@@ -15,7 +15,7 @@ angular.module('aceTrainingApp')
 
         $scope.updatePost = function (id) {
             FirebaseService.updatePost(id);
-            $scope.newPost = {name: '', body: ''};
+            $scope.newPost = {name: '', message: '', date: getDate()};
         };
 
         $scope.addPost = function() {
@@ -29,6 +29,14 @@ angular.module('aceTrainingApp')
             return index === size;
         };
 
+        function getDate() {
+            var currentDate = new Date()
+            var day = currentDate.getDate()
+            var month = currentDate.getMonth() + 1
+            var year = currentDate.getFullYear()
+            return day + "/" + month + "/" + year
+        };
+
 
         $scope.moveUp = function(post) {
             var currentPosition = $scope.posts.indexOf(post);
@@ -39,9 +47,12 @@ angular.module('aceTrainingApp')
 
                 var tempItem = angular.copy(newItem);
                 newItem.name = oldItem.name;
-                newItem.body = oldItem.body;
+                newItem.message = oldItem.message;
+                newItem.date = oldItem.date;
+
                 oldItem.name = tempItem.name;
-                oldItem.body = tempItem.body;
+                oldItem.message = tempItem.message;
+                oldItem.date = tempItem.date;
                 FirebaseService.updatePost(newItem);
                 FirebaseService.updatePost(oldItem);
             }
@@ -63,22 +74,5 @@ angular.module('aceTrainingApp')
                 FirebaseService.updatePost(newItem);
                 FirebaseService.updatePost(oldItem);
             }
-
-//            if (crntPos < $scope.posts.length) {
-//
-//                this.remove(crntPos);
-//
-//                $scope.posts.splice(crntPos, 1);
-//                $scope.posts.splice(crntPos + 1, 0, post);
-//                for(var i = 0; i < $scope.posts.length; i++){
-//                    var obj = {
-//                        name: $scope.posts[i].name,
-//                        body: $scope.posts[i].body
-//                    };
-//                    $scope.localPosts.push(obj);
-//                }
-//                FirebaseService.updateAllPosts($scope.localPosts);
-//                $scope.posts = $scope.localPosts;
-//            }
         };
   }]);
