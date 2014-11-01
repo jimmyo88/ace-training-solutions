@@ -3,6 +3,13 @@
 angular.module('aceTrainingApp')
   .controller('AdminController',['$scope','FirebaseService', function ($scope, FirebaseService) {
 //
+        function getDate() {
+            var currentDate = new Date();
+            var day = currentDate.getDate();
+            var month = currentDate.getMonth() + 1;
+            var year = currentDate.getFullYear();
+            return day + '/' + month + '/' + year;
+        }
 
         $scope.posts = FirebaseService.getPosts();
         $scope.localPosts = [];
@@ -23,20 +30,11 @@ angular.module('aceTrainingApp')
         };
 
         $scope.getPostSize = function(index) {
-            if(index==0) {
+            if(index===0) {
                 size = FirebaseService.getPosts().length - 1;
             }
             return index === size;
         };
-
-        function getDate() {
-            var currentDate = new Date()
-            var day = currentDate.getDate()
-            var month = currentDate.getMonth() + 1
-            var year = currentDate.getFullYear()
-            return day + "/" + month + "/" + year
-        };
-
 
         $scope.moveUp = function(post) {
             var currentPosition = $scope.posts.indexOf(post);
@@ -76,3 +74,4 @@ angular.module('aceTrainingApp')
             }
         };
   }]);
+

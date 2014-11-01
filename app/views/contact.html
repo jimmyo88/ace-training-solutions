@@ -1,0 +1,57 @@
+<div class="about-container">
+
+    <br />
+    <br />
+
+    <div class="text-area">
+        <h2 class="content-title">Contact Us</h2>
+    </div>
+
+    <br />
+    <br />
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputName" class="col-sm-4 control-label">Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="inputName" placeholder="Name" ng-model="name" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-sm-4 control-label">Email</label>
+            <div class="col-sm-4">
+                <input type="Email" class="form-control" id="inputEmail" placeholder="Email" ng-model="email" ng-required="true">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPhoneNumber" class="col-sm-4 control-label">Phone Number</label>
+            <div class="col-sm-4">
+                <input type="number" class="form-control" id="inputPhoneNumber" placeholder="Phone Number" ng-model="phoneNumber" ng-required="true">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputMessage" class="col-sm-4 control-label">Message</label>
+            <div class="col-sm-4">
+                <textarea class="form-control" id="inputMessage" ng-model="message" ng-required="true">
+                </textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-10">
+                <button type="submit" class="btn btn-default" ng-click="send()">Login</button>
+            </div>
+        </div>
+    </form>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+</div>

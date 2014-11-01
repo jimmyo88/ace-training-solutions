@@ -14,7 +14,7 @@ angular.module('aceTrainingApp')
         $scope.getPreviousFivePosts = function(){
             $scope.currentPage -= 1;
             $scope.posts = FirebaseSvc.getPreviousFivePosts($scope.posts[0]);
-        }
+        };
 
 
   }]);

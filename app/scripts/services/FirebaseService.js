@@ -3,7 +3,6 @@
 angular.module('aceTrainingApp').factory('FirebaseService', ['$firebase', function($firebase){
 
     var ref = new Firebase('https://acetrainingsolutions.firebaseio.com/');
-
     var posts = $firebase(ref);
     var firebase = $firebase;
     var itemsPerPage = 5;

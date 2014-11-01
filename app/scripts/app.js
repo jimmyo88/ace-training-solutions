@@ -45,6 +45,10 @@ angular.module('aceTrainingApp', [
             templateUrl: 'views/login.html',
             controller: 'LoginController'
         })
+        .when('/contact', {
+            templateUrl: 'views/contact.html',
+            controller: 'ContactController'
+        })
         .otherwise({
             redirectTo: '/'
         });

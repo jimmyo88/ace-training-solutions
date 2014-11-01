@@ -1,7 +1,7 @@
     <div class="carousel-container">
         <carousel interval="myInterval" no-pause="true" disable-animation="true">
             <slide ng-repeat="slide in slides" active="slide.active">
-                <img ng-src="{{slide.image}}" class="stock-image">
+                <img ng-src="{{slide.image}}" class="stock-image" width="800" height="343">
             </slide>
         </carousel>
     </div>
@@ -9,7 +9,7 @@
     <ul class="information-container">
         <li class="information-container__information-square" ng-repeat="info in information">
             <div class="information-square__title">{{info.title}}</div>
-            <img src="{{info.image}}">
+            <img ng-src="{{info.image}}" width="300" height="150">
             <span class="information-square__summary">{{info.summary}}</span>
         </li>
     </ul>
