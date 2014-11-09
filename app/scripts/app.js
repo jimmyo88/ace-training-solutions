@@ -12,7 +12,8 @@ angular.module('aceTrainingApp', [
     'ngAnimate',
     'ngRoute',
     'ui.bootstrap',
-    'firebase'
+    'firebase',
+    'angular-loading-bar'
   ]).config(function ($routeProvider) {
 
     $routeProvider.when('/', {
@@ -48,6 +49,10 @@ angular.module('aceTrainingApp', [
         .when('/contact', {
             templateUrl: 'views/contact.html',
             controller: 'ContactController'
+        })
+        .when('/products', {
+            templateUrl: 'views/products.html',
+            controller: 'ProductsController'
         })
         .otherwise({
             redirectTo: '/'

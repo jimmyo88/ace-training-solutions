@@ -1,0 +1,91 @@
+
+<div class="text-area">
+    <h2 class="content-title">Products & Services</h2>
+    <p>Delivering an excellent Customer Service and Customer Experience is the focus of any successful business and is paramount in today's competitive market.&nbsp;</p>
+    <p>Your Customers Journey must be seamless in order for the Customer&nbsp;to want to come back to you time and time again.&nbsp;</p>
+</div>
+
+    <ul class="information-container">
+        <li class="information-container__information-square" ng-repeat="product in products">
+            <div class="information-square__title">{{product.title}}</div>
+            <img ng-src="{{product.image}}" width="300" height="150">
+            <span class="information-square__summary">{{product.summary}}</span>
+        </li>
+    </ul>
+
+<div>
+
+        <br />
+<div style="width: 50%; margin: 0 auto;">
+    <accordion close-others="true">
+        <accordion-group is-open="status.heading1">
+            <accordion-heading>
+                Who will instruct my seminar?<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading1, 'glyphicon-chevron-right': !status.heading1}"></i>
+            </accordion-heading>
+            Depending upon your specific needs and product line, we will match you up with the appropriate technical professional within our company to deliver your seminar. Our instructors are experienced in their fields with many participating in industry and technical groups within their specialties.
+        </accordion-group>
+        <accordion-group is-open="status.heading2">
+            <accordion-heading>
+                I’m not ready to hold a private training seminar for my company. Do you offer any other training options?<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading2, 'glyphicon-chevron-right': !status.heading2}"></i>
+            </accordion-heading>
+            Yes, we do offer a number of seminars on current topics for our clients throughout the year. These are held in a specific location and on specified dates. Sessions are attended simultaneously by our clients from a variety of companies. For a details of our upcoming seminars please visit our email us at bvsales@uk.bureauveritas.com
+        </accordion-group>
+        <accordion-group is-open="status.heading3">
+            <accordion-heading>
+                What kind of seminars do you offer? <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading3, 'glyphicon-chevron-right': !status.heading3}"></i>
+            </accordion-heading>
+            Here are some examples of seminars we run: General product safety; The basics of textile testing; Design, safety and testing of children’s clothing; Flammability in textiles and related materials; Understanding the REACH Directive; Toy Safety and the revised Toy Safety Directive; The basics of nursery and child care products testing; The basics of bicycle testing; Introduction to ecodesign; Introduction to Corporate Social Responsibility and much more.
+        </accordion-group>
+        <accordion-group is-open="status.heading4">
+            <accordion-heading>
+                What is the experience of the instructor(s) delivering my course?<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading4, 'glyphicon-chevron-right': !status.heading4}"></i>
+            </accordion-heading>
+            We only employ trainers who have plenty of real-world project management (and/or PRINCE2) experience. By doing so, all of our trainers are able to bring their experience into the classroom which helps you learn more effectively. In addition all of our PRINCE2 trainers have been rigorously accredited by the British Computer Society (one of the PRINCE2 accreditation bodies) to ensure that they have the appropriate PRINCE2 and project management experience.
+        </accordion-group>
+        <accordion-group is-open="status.heading5">
+            <accordion-heading>
+                What time do your courses begin? <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading5, 'glyphicon-chevron-right': !status.heading5}"></i>
+            </accordion-heading>
+            All courses start at 9:30am each morning and usually continue until either 4:30 or 5pm. However, PRINCE2 Foundation courses will finish at 1pm on the 3rd day and PRINCE2 Practitioner courses will finish at midday on the final day. PRINCE2 Re-registration and Practitioner-only courses begin at 2pm on the first day. If you want further details, please call us.
+        </accordion-group>
+        <accordion-group is-open="status.heading6">
+            <accordion-heading>
+                What’s included in the price? <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading6, 'glyphicon-chevron-right': !status.heading6}"></i>
+            </accordion-heading>
+            Everything except your lunch! This means that if you’re studying a course with exams, then your exam fee(s) and sample exams are included. In addition the price usually includes the course manual but it’s best to check the details of the particular course. For all training, our course materials and pre-course study materials (where appropriate) are all included. You also have unlimited tea, coffee, water and biscuits and free WiFi.
+        </accordion-group>
+        <accordion-group is-open="status.heading7">
+            <accordion-heading>
+                I use a wheelchair. Can I get access to an exam venue? <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading7, 'glyphicon-chevron-right': !status.heading7}"></i>
+            </accordion-heading>
+            This depends upon the venue. Please call us to check whether wheelchair access if provided.
+        </accordion-group>
+        <accordion-group is-open="status.heading8">
+            <accordion-heading>
+                Can you deliver this course onsite at my company's premises? <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading8, 'glyphicon-chevron-right': !status.heading8}"></i>
+            </accordion-heading>
+            Yes – all of our courses are available as in-house courses. Please call us and speak with our representatives to discuss the pricing.
+        </accordion-group>
+        <accordion-group is-open="status.heading9">
+            <accordion-heading>
+                When do I get the course manual? <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading9, 'glyphicon-chevron-right': !status.heading9}"></i>
+            </accordion-heading>
+            For courses which require a manual, you will be given a copy of the course manual on the first morning of the course.
+        </accordion-group>
+        <accordion-group is-open="status.heading10">
+            <accordion-heading>
+                What happens if I fail the exam?
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.heading10, 'glyphicon-chevron-right': !status.heading10}"></i>
+            </accordion-heading>
+            You can re-sit the exam most weeks but an additional fee is payable. It’s best to speak with us about re-sit exam fees.
+        </accordion-group>
+    </accordion>
+</div>
+
+
+<br />
+<br />
+<br />
+<br />
+
+</div>

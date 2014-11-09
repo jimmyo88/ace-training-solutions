@@ -1,7 +1,7 @@
 .about-container{
   width: 100%;
   background-color: #D0F5FC;
-}
+
 
   span {
     width: 65%;
@@ -9,6 +9,7 @@
     display: block;
     margin-right: 20px;
   }
+}
 
 .staff-portrait {
   height:auto;
@@ -16,5 +17,12 @@
   max-width: 300px;
   display: inherit;
   float: right;
+}
+
+.text-area__about-text{
+  width: 65%;
+  float: left;
+  display: block;
+  margin-right: 20px;
 }
 

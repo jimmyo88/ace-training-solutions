@@ -6,7 +6,7 @@ angular.module('aceTrainingApp').factory('AuthenticationService', function($http
     function login(userName, password) {
         var deferred = $q.defer();
 
-        $http.post('http://localhost:8080/login', {
+        $http.post('https://user-authentication-service.herokuapp.com/login', {
             username: userName,
             password: password
         }).then(function(result) {

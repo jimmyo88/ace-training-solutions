@@ -11,26 +11,28 @@
   .information-container__information-square {
 
     width: 304px;
-    border-radius: 18px;
+    border-radius: 15px;
     display: inline-block;
-    margin: 0 25px 0 25px;
+    margin: 10px 25px 10px 25px;
+    vertical-align: top;
+    min-height: 245px;
 
-    &:nth-child(1) {
+    &:nth-child(3n+1) {
       @include information-square(#6495ed);
     }
 
-    &:nth-child(2) {
+    &:nth-child(3n+2) {
       @include information-square(#ed8db6);
     }
 
-    &:nth-child(3) {
+    &:nth-child(3n+3) {
       @include information-square(#3ced6e);
     }
-
 
     .information-square__summary {
       background-color: #ffffff;
       display: block;
+      width: 100%;
     }
 
     .information-square__title {
