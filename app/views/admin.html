@@ -1,55 +1,73 @@
-<div class="text-area">
-    <h2 class="content-title">Blog</h2>
+<div class="text-area" xmlns="http://www.w3.org/1999/html">
+    <h2 class="content-title">Edit your blog</h2>
 
-    <ul>
-        <div>
-            <h2>Add Post</h2>
-                <form class="form-inline" role="form" novalidate ng-submit="addPost()">
-                    <label for="name">Name:</label>
-                    <div class="form-group">
-                        <input type="text" id="name" class="form-control" ng-model="newPost.name" placeholder="Name">
-                    </div>
-                    <br />
-                    <label for="title">Title:</label>
-                    <div class="form-group">
-                        <input type="text" id="title" class="form-control" ng-model="newPost.title" placeholder="Title">
-                    </div>
-                    <br />
-                    <label for="body">Message:</label>
-                    <div class="form-group">
-                        <input type="text" id="body" class="form-control" ng-model="newPost.message" placeholder="Body">
-                    </div>
-                    <br />
-                    <input type="submit">
-                </form>
-        </div>
-        <li ng-repeat="post in posts">
+    <div class="add-post-container">
+        <h2>Create a new post</h2>
+        <h5>The date will be added automatically and your new post should appear instantly</h5>
+        <form class="form-inline" role="form" ng-submit="addPost()">
+
             <div class="row">
-                <div class="col-md-6">
-                    <p class="input-group">
-                        <input type="text" ng-model="post.name" ng-blur="updatePost($index)">
-                    </p>
-                    <p class="input-group">
-                        <input type="text" ng-model="post.message" ng-blur="updatePost($index)">
-                    </p>
-                    <p class="input-group">
-                        <input type="text" class="form-control"
-                               datepicker-popup="dd/MM/yyyy"
-                               ng-model="post.date"
-                               is-open="post.opened"
-                               ng-blur="updatePost($index)"
-                               datepicker-options="dateOptions"
-                                />
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open($event, $index)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-                    </p>
+                <label for="name" class="col-xs-2">Name:</label>
+                <div class="form-group">
+                    <input type="text" id="name" class="form-control" ng-model="newPost.name" placeholder="Name" ng-required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="title" class="col-xs-2">Title:</label>
+                <div class="form-group">
+                    <input type="text" id="title" class="form-control" ng-model="newPost.title" placeholder="Title" ng-required="true">
+                </div>
                 </div>
 
+            <div class="row">
+            <label for="body" class="col-xs-2">Post:</label>
+                <div class="form-group">
+                    <textarea id="body" class="form-control admin__add_message" ng-model="newPost.message" placeholder="Body" ng-required="true"></textarea>
+                </div>
+            </div>
+
+            <input type="submit" class="btn btn-default">
+        </form>
+    </div>
+    <ul class="admin__blog-posts">
+        <div class="edit-post-container">
+            <h2>Edit an existing post</h2>
+            <h5>The post will be edited instantly in real time</h5>
+        </div>
+        <li ng-repeat="post in posts" class="admin__blog-posts__post">
+
+            <div class="row">
+                <label for="edit-name" class="col-xs-1 control-label"><br />Name:</label><br />
+                <input type="text" ng-model="post.name" id="edit-name" class="col-xs-8" ng-blur="updatePost($index)">
                 <button type="button" class="close space" ng-click="removePost(post)">&times;</button>
                 <button type="button" class="close space" ng-click="moveDown(post)" ng-hide="getPostSize($index)">&DownArrow;</button>
                 <button type="button" class="close space" ng-click="moveUp(post)" ng-show="$index != 0">&UpArrow;</button>
             </div>
+
+            <div class="row">
+                <label for="edit-title" class="col-xs-1 control-label"><br />Title:</label><br />
+                <input type="text" ng-model="post.title" id="edit-title" class="col-xs-8" ng-blur="updatePost($index)">
+            </div>
+
+            <div class="row">
+                <label for="edit-date" class="col-xs-1 control-label"><br />Date:</label><br />
+                <input type="text" class="col-xs-8" id="edit-date"
+                       datepicker-popup="dd/MM/yyyy"
+                       ng-model="post.date"
+                       is-open="post.opened"
+                       ng-blur="updatePost($index)"
+                       datepicker-options="dateOptions"
+                       ng-focus="open($event, $index)"
+                        />
+                <button type="button" class="btn btn-default" ng-click="open($event, $index)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </div>
+
+            <div class="row">
+                <label for="edit-post" class="col-xs-1 control-label"><br />Post:</label><br />
+                <textarea ng-model="post.message" id="edit-post" class="col-xs-8" ng-blur="updatePost($index)"></textarea>
+            </div>
+
         </li>
     </ul>
 </div>

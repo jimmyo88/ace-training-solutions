@@ -1,0 +1,55 @@
+$min-width : 527px;
+
+.admin__message{
+  min-width: $min-width;
+  min-height: 100px;
+}
+
+.admin__name{
+  min-width: $min-width;
+}
+.admin__title{
+  min-width: $min-width;
+}
+
+.admin__date{
+  min-width: $min-width;
+}
+
+.admin__add_message{
+  min-width: 800px;
+}
+
+.admin__blog-posts{
+  list-style: none;
+  margin: 0 auto;
+
+  .admin__blog-posts__post{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: #a6e1ec;
+    border-radius: 6px;
+  }
+}
+
+.add-post-container{
+  margin-left: 3em;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: honeydew;
+  border-radius: 6px;
+  padding-top: 5px;
+}
+
+.edit-post-container{
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #a6e1ec;
+  border-radius: 6px;
+  margin-top: 20px;
+  padding-top: 5px;
+}
