@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('aceTrainingApp').controller('HomeController', function ($scope) {
+    $scope.title = 'dddd';
     $scope.myInterval = 4000;
     $scope.slides = [
         {image: 'https://s3-eu-west-1.amazonaws.com/ace-training-services/home/home-stock-image-1.jpg'},
