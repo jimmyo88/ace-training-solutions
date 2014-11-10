@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('aceTrainingApp').controller('HomeController', function ($scope) {
-    $scope.myInterval = 7000;
+    $scope.myInterval = 4000;
     $scope.slides = [
         {image: 'images/home-stock-image-1.jpg'},
         {image: 'images/home-stock-image-2.jpg'},

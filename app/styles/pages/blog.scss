@@ -8,7 +8,7 @@
   margin: 1em 0 3em;
   border: 5px solid #5a8f00;
   color: #333;
-  background: #fff;
+  background: #90FFA8;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -32,7 +32,7 @@
     left: 47px;
     border-width: 13px 13px 0;
     border-style: solid;
-    border-color: #fff transparent;
+    border-color: #90FFA8 transparent;
     display: block;
     width: 0;
   }
@@ -44,7 +44,7 @@
   margin: 1em 0 3em;
   border: 5px solid #5a8f00;
   color: #333;
-  background: #fff;
+  background: #ffd5f4;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -72,17 +72,50 @@
     right: 47px;
     border-width: 0 13px 13px;
     border-style: solid;
-    border-color: #fff transparent;
+    border-color: #ffd5f4 transparent;
     display: block;
     width: 0;
   }
 
 }
   .blog-posts__name{
-    font-size: 22px;
+    font-size: 20px;
+    float: left;
+    margin-left: 20px;
+    font-family: cursive;
   }
 
   .blog-posts__date{
-    font-size: 32px;
+    font-size: 20px;
+    float: left;
+    font-family: cursive;
+    font-weight: bold;
+  }
+
+  .blog-posts__title{
+    font-size: 21px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    font-weight: bold;
   }
 }
+
+.outer-container{
+  background-color: #D0F5FC;
+}
+
+.button-container {
+  margin: 0 auto;
+  width: 270px;
+
+  >.left{
+    float: left;
+  }
+
+  >.right{
+    float: right;
+  }
+}
+

@@ -50,7 +50,7 @@ angular.module('aceTrainingApp').factory('FirebaseService', ['$firebase', functi
         getFirstPosts: getFirstPosts,
         getNextFivePosts: getNextFivePosts,
         getPreviousFivePosts: getPreviousFivePosts,
-        getPosts: getAllPosts,
+        getAllPosts: getAllPosts,
         removePost: removePost,
         updatePost: updatePost,
         addPost: addPost,

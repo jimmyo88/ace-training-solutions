@@ -10,20 +10,46 @@
                         <input type="text" id="name" class="form-control" ng-model="newPost.name" placeholder="Name">
                     </div>
                     <br />
+                    <label for="title">Title:</label>
+                    <div class="form-group">
+                        <input type="text" id="title" class="form-control" ng-model="newPost.title" placeholder="Title">
+                    </div>
+                    <br />
                     <label for="body">Message:</label>
                     <div class="form-group">
                         <input type="text" id="body" class="form-control" ng-model="newPost.message" placeholder="Body">
                     </div>
+                    <br />
                     <input type="submit">
                 </form>
         </div>
         <li ng-repeat="post in posts">
-            <input type="text" ng-model="post.name" ng-blur="updatePost($index)">
-            <input type="text" ng-model="post.message" ng-blur="updatePost($index)">
-            <input type="text" ng-model="post.date" ng-blur="updatePost($index)" ng-disabled="true">
-            <button type="button" class="close space" ng-click="removePost(post)">&times;</button>
-            <button type="button" class="close space" ng-click="moveDown(post)" ng-hide="getPostSize($index)">&DownArrow;</button>
-            <button type="button" class="close space" ng-click="moveUp(post)" ng-show="$index != 0">&UpArrow;</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="input-group">
+                        <input type="text" ng-model="post.name" ng-blur="updatePost($index)">
+                    </p>
+                    <p class="input-group">
+                        <input type="text" ng-model="post.message" ng-blur="updatePost($index)">
+                    </p>
+                    <p class="input-group">
+                        <input type="text" class="form-control"
+                               datepicker-popup="dd/MM/yyyy"
+                               ng-model="post.date"
+                               is-open="post.opened"
+                               ng-blur="updatePost($index)"
+                               datepicker-options="dateOptions"
+                                />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event, $index)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+                    </p>
+                </div>
+
+                <button type="button" class="close space" ng-click="removePost(post)">&times;</button>
+                <button type="button" class="close space" ng-click="moveDown(post)" ng-hide="getPostSize($index)">&DownArrow;</button>
+                <button type="button" class="close space" ng-click="moveUp(post)" ng-show="$index != 0">&UpArrow;</button>
+            </div>
         </li>
     </ul>
 </div>
