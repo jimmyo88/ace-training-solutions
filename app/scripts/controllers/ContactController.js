@@ -9,7 +9,7 @@ angular.module('aceTrainingApp').controller('ContactController',['$scope', 'Emai
             .success(function(response){
                 $scope.sent = true;
                 $scope.response = response.content;
-                if($scope.response = 'success'){
+                if($scope.response === 'success'){
                     clearboxes();
                 }
         });
