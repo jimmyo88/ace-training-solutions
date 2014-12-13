@@ -67,7 +67,7 @@ angular.module('aceTrainingApp', [
 })
   .run(['$rootScope', '$location', function($rootScope, $location) {
 
-    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current) {
         $rootScope.title = current.$$route.title;
     });
     $rootScope.$on('$routeChangeError', function(event, current, previous, eventObj) {

@@ -1,3 +1,5 @@
+@import "./mixins/breakpoint";
+
 #footer {
   width: 100%;
   height: 210px;
@@ -6,8 +8,8 @@
   left: 0px;
   background-color: #000000;
   display: inline-block;
-  padding-left: 19%;
-  padding-right: 11%;
+//  padding-left: 19%;
+//  padding-right: 11%;
 
   .contact-container {
     display: block;
@@ -16,7 +18,7 @@
 
 
   .footer__container {
-    width: 28%;
+    width: 33%;
     display: inline-block;
     text-align: center;
     padding-top: 10px;
@@ -41,6 +43,19 @@
       color: #ffffff;
       display: inline-block;
       margin-top: 10px;
+      width: 100%;
+    }
+
+    .email-icon{
+      @include breakpoint(mobile-portrait) {
+        margin-top: 32px;
+      }
+      @include breakpoint(mobile-landscape) {
+        margin-top: 32px;
+      }
+      @include breakpoint(mobile-portrait) {
+        margin-top: 32px;
+      }
     }
 
     .icon-text{
@@ -48,6 +63,14 @@
       display: block;
       width: 100%;
       border: none;
+      color: #ffffff;
+
+      @include breakpoint(mobile-portrait) {
+        display: none;
+      }
+      @include breakpoint(mobile-landscape) {
+        display: none;
+      }
 
       &:after{
         display: block;

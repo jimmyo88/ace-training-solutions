@@ -1,10 +1,16 @@
-.container{
-
-}
+@import './mixins/breakpoint';
 
 .form-container{
   width: 50%;
   float: left;
+
+  @include breakpoint(mobile-portrait){
+    width: 100%;
+  }
+
+  @include breakpoint(mobile-landscape){
+    width: 100%;
+  }
 }
 
 .centred-alert-text{

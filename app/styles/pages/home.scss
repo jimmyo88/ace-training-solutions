@@ -1,12 +1,20 @@
 @import './common';
 @import './image-carousel';
 @import './mixins/information-square';
+@import './mixins/breakpoint';
 
 .information-container {
   background-color: #D0F5FC;
   text-align: center;
   padding-top: 25px;
   padding-bottom: 15px;
+  padding-left: 0px;
+
+  .information-container__image{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+  }
 
   .information-container__information-square {
 
@@ -16,6 +24,15 @@
     margin: 10px 25px 10px 25px;
     vertical-align: top;
     min-height: 245px;
+
+    @include breakpoint(mobile-portrait){
+      margin: 0 auto;
+      width: 124px;
+      border-radius: 15px;
+      display: inline-block;
+      vertical-align: top;
+      min-height: 0px;
+    }
 
     &:nth-child(3n+1) {
       @include information-square(#6495ed);
@@ -40,10 +57,14 @@
     .information-square__title {
       font-family: Century Gothic, sans-serif;
       color: #ffffff;
-      font-size: 28px;
+      font-size: 2em;
       text-align: center;
       padding-left: 15px;
       padding-right: 15px;
+
+      @include breakpoint(mobile-portrait){
+        font-size: 1em;
+      }
     }
   }
 }

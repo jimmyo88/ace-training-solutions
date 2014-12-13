@@ -1,3 +1,5 @@
+@import './mixins/breakpoint';
+
 .about-container{
   width: 100%;
   background-color: #D0F5FC;
@@ -17,6 +19,15 @@
   max-width: 300px;
   display: inherit;
   float: right;
+
+
+  @include breakpoint(mobile-portrait){
+    display: none;
+  }
+
+  @include breakpoint(mobile-landscape){
+    display: none;
+  }
 }
 
 .text-area__about-text{
@@ -25,5 +36,15 @@
   display: block;
   margin-right: 20px;
   margin-bottom: 20px;
+
+  @include breakpoint(mobile-portrait){
+    margin-right: 0px;
+    width: 100%;
+  }
+
+  @include breakpoint(mobile-landscape){
+    margin-right: 0px;
+    width: 100%;
+  }
 }
 

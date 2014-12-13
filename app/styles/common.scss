@@ -1,4 +1,10 @@
 @import './mixins/content-title';
+@import './mixins/breakpoint';
+
+body{
+  overflow: hidden;
+  overflow-y: auto;
+}
 
 .stock-image{
   margin: 0 auto;
@@ -12,7 +18,17 @@
   text-align: justify;
   line-height: 2em;
   margin: 0 auto;
-  padding-left: 2.7em;
+  padding-left: 5%;
+
+  @include breakpoint(mobile-portrait){
+    margin: 0;
+    width: 90%;
+  }
+
+  @include breakpoint(mobile-landscape){
+    margin: 0;
+    width: 90%;
+  }
 
   .content-title{
     @include content-title(#6495ed,#ed8db6,#3ced6e)
